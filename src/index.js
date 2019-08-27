@@ -1,15 +1,18 @@
 import * as PIXI from 'pixi.js'
+const scale = 25,
+    N  = 32,
+    M = 24;
 
 const app = new PIXI.Application({
-    width: 800, height: 600, backgroundColor: 0x1099bb, resolution: 1,
+    width: N * scale, height: M * scale, backgroundColor: 0x1099bb, resolution: 1,
 });
 document.body.appendChild(app.view);
 
-// Rectangle
+// Rectangl
 const graphics = new PIXI.Graphics();
 
-const scale = 25,
-    snake = [{x : 3, y : 3}],
+
+    const snake = [{x : Math.floor(N / 2), y : Math.floor(M/2)}],
     v = new PIXI.Point(0, 1);
 
 app.stage.addChild(graphics);
